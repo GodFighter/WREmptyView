@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WREmptyView
 
 class ViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class ViewController: UIViewController {
 
         let tableView = UITableView()
         tableView.reloadData()
+        print(tableView.emptyView)        
     }
 
     override func didReceiveMemoryWarning() {
