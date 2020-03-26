@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WREmptyView_Example' do
+  pod 'WREmptyView', :path => '../'
+
+  target 'WREmptyView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
