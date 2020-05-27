@@ -1,17 +1,15 @@
 //
-//  UITableView+WREmpty.swift
-//  Pods
+//  UICollectionView+WREmpty.swift
+//  Pods-WREmptyView_Example
 //
-//  Created by 项辉 on 2020/3/26.
+//  Created by 项辉 on 2020/5/22.
 //
 
 import UIKit
 import WRRuntime
 
-let WR_EmptyView_Key = UnsafeRawPointer.init(bitPattern: "kEmptyViewKey".hashValue)
+extension UICollectionView: WRRuntimeProtocol, WREmpty {
 
-extension UITableView: WRRuntimeProtocol, WREmpty {
-        
     public var emptyView: WREmptyView {
         get {
             var emptyView: WREmptyView? = objc_getAssociatedObject(self, WR_EmptyView_Key!) as? WREmptyView
@@ -43,12 +41,11 @@ extension UITableView: WRRuntimeProtocol, WREmpty {
     @objc private dynamic func _wr_reloadData() {
         _wr_reloadData()
         
-        self.separatorStyle = .none
         checkCount()
     }
     
     private func checkCount() {
         self.emptyView.isHidden = totalCount != 0
     }
-        
+
 }

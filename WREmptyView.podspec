@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WREmptyView'
-  s.version          = '0.4.0'
+  s.version          = '0.6.0'
   s.summary          = '表示图 空数据的展示view'
 
   s.description      = '表示图空数据展示，包括UITableView、UICollectionView'
@@ -31,5 +31,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
    s.frameworks = 'UIKit', 'Foundation'
-   s.dependency 'WRRuntime', '~> 1.2.0'
+   s.dependency 'WRRuntime', '~> 1.3.0'
 end
