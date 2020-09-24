@@ -43,12 +43,6 @@ open class WREmptyView: UIView {
     open var titleLabel: UILabel?
     open var displayEnable: Bool = false
     
-    override open var isHidden: Bool {
-        didSet {
-            titleLabel?.isHidden = isHidden
-        }
-    }
-    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         initUI()
@@ -63,6 +57,7 @@ open class WREmptyView: UIView {
     
     func initDefault() {
         isHidden = true
+        titleLabel?.isHidden = true
     }
     
     func initUI() {
