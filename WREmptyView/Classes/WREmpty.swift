@@ -14,9 +14,7 @@ public protocol WREmptyable {
     func numberOfRows(inSection section: Int) -> Int
 }
 
-extension UITableView: WREmptyable {
-    
-}
+extension UITableView: WREmptyable { }
 extension UICollectionView: WREmptyable {
     public func numberOfRows(inSection section: Int) -> Int {
         return numberOfItems(inSection: section)
@@ -43,21 +41,28 @@ extension WREmpty {
 //MARK:-  WREmptyView
 open class WREmptyView: UIView {
     open var titleLabel: UILabel?
+    open var displayEnable: Bool = false
+    
+    override open var isHidden: Bool {
+        didSet {
+            titleLabel?.isHidden = isHidden
+        }
+    }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        initDefault()
         initUI()
-}
+        initDefault()
+    }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initDefault()
         initUI()
+        initDefault()
     }
     
     func initDefault() {
-        backgroundColor = .red
+        isHidden = true
     }
     
     func initUI() {

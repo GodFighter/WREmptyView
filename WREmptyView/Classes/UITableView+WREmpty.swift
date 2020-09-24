@@ -48,6 +48,9 @@ extension UITableView: WRRuntimeProtocol, WREmpty {
     }
     
     private func checkCount() {
+        guard emptyView.displayEnable else {
+            return
+        }
         self.emptyView.isHidden = totalCount != 0
     }
         
